@@ -40,7 +40,7 @@ col1, col2, col3 = st.columns(3)
 with col1:
     st.markdown(
         '<div class="option-box">'
-        '💬<br><a href="/Query_assistant" target="_self"><b>Assistant Query</b></a>'
+        '💬<br><a href="/Query_assistant" target="_self"><b>Query Assistant</b></a>'
         '</div>',
         unsafe_allow_html=True
     )

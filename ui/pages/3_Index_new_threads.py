@@ -33,8 +33,14 @@ if uploaded_files:
 
         documents.append(Document(page_content=content, metadata=metadata))
 
+    st.subheader("🧵 Thread Info")
+    thread_name = st.text_input("Enter a thread name for these emails (required):")
+
     if st.button("📌 Index Files"):
-        index_email_uploaded(uploaded_files,None)
-        # vectorstore.add_documents(documents)
-        # vectorstore.persist()
-        st.success(f"✅ Indexed {len(documents)} document(s) successfully!")
+        if not thread_name.strip():
+            st.error("Please enter a thread name before indexing.")
+        else:
+            index_email_uploaded(uploaded_files,thread_name)
+            # vectorstore.add_documents(documents)
+            # vectorstore.persist()
+            st.success(f"✅ Indexed {len(documents)} document(s) successfully!")
