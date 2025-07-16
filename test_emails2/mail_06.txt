@@ -1,0 +1,12 @@
+From: frank@acmecorp.com
+To: grace@acmecorp.com
+Subject: Urgent Review: Escalation of Budget Overrun
+Date: 2025-07-10 19:55:46
+Cc: legal@acmecorp.com
+
+Hi Grace,
+
+I've reviewed the details of the escalated case. It appears we missed [detail]. Let's ensure this doesn't happen again and put a mitigation plan in place.
+
+Best regards,
+Frank

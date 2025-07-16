@@ -1,0 +1,13 @@
+From: alice@acmecorp.com
+To: maya@acmecorp.com
+Subject: Follow-up: Escalation on Performance Degradation - Further discussion needed
+Date: 2025-07-09 23:59:22
+Cc: legal@acmecorp.com
+Bcc: cto@acmecorp.com, ceo@acmecorp.com
+
+Team,
+
+This escalation requires urgent attention. We're seeing critical delays on [project name] and need to re-evaluate our approach. Please provide an update on your respective parts by EOD today.
+
+Regards,
+Alice

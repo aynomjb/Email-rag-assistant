@@ -1,0 +1,12 @@
+From: eve@acmecorp.com
+To: judy@acmecorp.com
+Subject: Status Update: Escalated Problem Resolution - Please review ASAP
+Date: 2025-06-18 22:56:19
+Cc: qa@acmecorp.com, devops@acmecorp.com
+
+Hi Judy,
+
+I've reviewed the details of the escalated case. It appears we missed [detail]. Let's ensure this doesn't happen again and put a mitigation plan in place.
+
+Best regards,
+Eve
