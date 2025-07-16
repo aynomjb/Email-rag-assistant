@@ -29,7 +29,8 @@ for i, doc in enumerate(docs):
         "subject": subject,
         "from": sender,
         "date": raw_date,
-        "date_parsed": date_parsed
+        "date_parsed": date_parsed,
+        "thread": metadata.get("thread", "Unknown Thread")
     })
 
 df = pd.DataFrame(meta)
@@ -39,6 +40,9 @@ st.sidebar.title("📂 Filters")
 if df.empty:
     st.error("❌ No documents found in Chroma DB.")
     st.stop()
+# Thread Filter
+threads = df["thread"].dropna().unique().tolist()
+selected_threads = st.sidebar.multiselect("🧵 Thread ID", threads, default=threads)
 df["date_parsed"] = pd.to_datetime(df["date"], errors="coerce")
 df["date_parsed"].fillna(pd.to_datetime("1970-01-01"), inplace=True)
 min_date = df["date_parsed"].min()
@@ -52,7 +56,8 @@ selected_senders = st.sidebar.multiselect("✉️ Sender", senders, default=send
 filtered_df = df[
     (df["from"].isin(selected_senders)) &
     (df["date_parsed"] >= pd.to_datetime(date_range[0])) &
-    (df["date_parsed"] <= pd.to_datetime(date_range[1]))
+    (df["date_parsed"] <= pd.to_datetime(date_range[1])) &
+    (df["thread"].isin(selected_threads))
 ]
 
 # Render list labels

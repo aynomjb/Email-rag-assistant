@@ -97,7 +97,7 @@ def parse_email(file_path):
     )
 
 
-def parse_email_r(file_path, email_dir="emails"):
+def parse_email_r(file_path, email_dir):
     with open(file_path, "r", encoding="utf-8") as f:
         raw = f.read()
 
@@ -135,8 +135,6 @@ def parse_email_r(file_path, email_dir="emails"):
 
 # 3. Index all emails from a directory
 def index_email_directory(email_dir):
-    if not email_dir:
-        email_dir = generate_sha256_timestamp()
     txt_files = glob.glob(os.path.join(email_dir, "*.txt"))
     txt_files = [f for f in txt_files if not f.endswith("-parsed.txt")]
     docs = [parse_email_r(fp, email_dir) for fp in txt_files]
