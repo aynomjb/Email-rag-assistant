@@ -1,0 +1,11 @@
+You can even label each block like this to guide the LLM further:
+
+text
+Copy
+Edit
+[Latest Reply by Alice on 2025-04-21]
+Hi Bob, the project is 90% done.
+
+---
+[Previous Message by Bob on 2025-04-18]
+How far are we with the sprint?

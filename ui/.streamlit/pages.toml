@@ -1,0 +1,18 @@
+[[pages]]
+path = "Home.py"
+name = "🏠 Home"
+
+[[pages]]
+path = "pages/query.py"
+name = "🧠 Assistant Query"
+icon = "💬"
+
+[[pages]]
+path = "pages/list.py"
+name = "📄 Indexed Documents"
+icon = "📁"
+
+[[pages]]
+path = "pages/indexer.py"
+name = "📥 Index New Emails"
+icon = "🗂️"

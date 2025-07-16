@@ -1,0 +1,16 @@
+question,expected_answer,predicted_answer,exact_match,f1_score
+When is the kickoff meeting for Project Phoenix scheduled?,Tuesday at 2 PM,The kickoff meeting for Project Phoenix is scheduled for Tuesday at 2 PM.,False,0.47
+Who is expected to attend the Project Phoenix kickoff meeting?,"Alice, Bob, DevOps Team, QA Team","The individuals who are expected to attend the Project Phoenix kickoff meeting, as confirmed by Alice in her emails, include:
+
+1. Bob (mentioned in multiple emails)
+2. DevOps team (invited in the email sent on 2024-09-02 and responded to by DevOps team on 2024-09-03)
+3. QA team (invited in the email sent on 2024-09-02)
+
+It is not clear if other individuals from ACMECorp are expected to attend, as they have not been explicitly invited or confirmed their availability.",False,0.12
+What will be discussed during the kickoff meeting?,"Scope and objectives, Sprint 0 planning, Risk identification","The kickoff meeting for Project Phoenix will cover:
+
+1. Scope and objectives
+2. Sprint 0 planning
+3. Risk identification
+
+This information is confirmed through multiple emails sent by Alice to various stakeholders, including Bob, DevOps Team, and QA Team, all of which reiterate the same meeting agenda.",False,0.29

@@ -1,0 +1,23 @@
+[
+  {
+    "question": "When is the kickoff meeting for Project Phoenix scheduled?",
+    "expected": "Tuesday at 2 PM",
+    "predicted": "The kickoff meeting for Project Phoenix is scheduled for Tuesday at 2 PM.",
+    "em": false,
+    "f1": 0.47058823529411764
+  },
+  {
+    "question": "Who is expected to attend the Project Phoenix kickoff meeting?",
+    "expected": "Alice, Bob, DevOps Team, QA Team",
+    "predicted": "The individuals who are expected to attend the Project Phoenix kickoff meeting, as confirmed by Alice in her emails, include:\n\n1. Bob (mentioned in multiple emails)\n2. DevOps team (invited in the email sent on 2024-09-02 and responded to by DevOps team on 2024-09-03)\n3. QA team (invited in the email sent on 2024-09-02)\n\nIt is not clear if other individuals from ACMECorp are expected to attend, as they have not been explicitly invited or confirmed their availability.",
+    "em": false,
+    "f1": 0.11904761904761904
+  },
+  {
+    "question": "What will be discussed during the kickoff meeting?",
+    "expected": "Scope and objectives, Sprint 0 planning, Risk identification",
+    "predicted": "The kickoff meeting for Project Phoenix will cover:\n\n1. Scope and objectives\n2. Sprint 0 planning\n3. Risk identification\n\nThis information is confirmed through multiple emails sent by Alice to various stakeholders, including Bob, DevOps Team, and QA Team, all of which reiterate the same meeting agenda.",
+    "em": false,
+    "f1": 0.2909090909090909
+  }
+]
