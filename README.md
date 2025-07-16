@@ -72,7 +72,7 @@ Mail-threaded/
 
 5. **Run Streamlit**
    ```bash
-   streamlit run ui/home.py
+   streamlit run ui/Home.py
    ```
 
 ---
