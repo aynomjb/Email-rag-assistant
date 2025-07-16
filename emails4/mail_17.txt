@@ -1,0 +1,12 @@
+From: bob@acmecorp.com
+To: heidi@acmecorp.com
+Subject: Action Plan: Addressing Escalated Customer Complaint - Need your input
+Date: 2025-06-30 16:14:56
+Cc: marketing@acmecorp.com, qa@acmecorp.com, legal@acmecorp.com
+
+Hello Heidi,
+
+Following up on our last discussion about the escalation, I've managed to [action taken]. However, we still need to address [remaining issue].
+
+Regards,
+Bob

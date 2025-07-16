@@ -1,0 +1,13 @@
+From: charlie@acmecorp.com
+To: heidi@acmecorp.com
+Subject: Discussion: Next Steps for Escalated Bug Report - Please review ASAP
+Date: 2025-06-28 13:05:57
+Cc: support@acmecorp.com, devops@acmecorp.com, qa@acmecorp.com
+Bcc: cto@acmecorp.com
+
+Dear Heidi,
+
+I'm forwarding this escalation request from [original sender]. Please provide your insights on how we can resolve this efficiently.
+
+Thanks,
+Charlie

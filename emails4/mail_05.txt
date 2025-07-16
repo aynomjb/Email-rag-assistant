@@ -1,0 +1,12 @@
+From: eve@acmecorp.com
+To: grace@acmecorp.com
+Subject: Discussion: Next Steps for Escalated Bug Report - URGENT
+Date: 2025-07-12 03:57:20
+Cc: support@acmecorp.com
+
+Team,
+
+Just to reiterate the urgency of this escalation. We are at risk of [negative consequence] if we don't act swiftly. Let's prioritize this above all else.
+
+Best,
+Eve

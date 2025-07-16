@@ -1,0 +1,12 @@
+From: eve@acmecorp.com
+To: liam@acmecorp.com
+Subject: FW: Project Z Delay - Escalation Discussion - Please review ASAP
+Date: 2025-07-06 14:04:08
+Cc: support@acmecorp.com, finance@acmecorp.com
+
+Hi Liam,
+
+I've reviewed the details of the escalated case. It appears we missed [detail]. Let's ensure this doesn't happen again and put a mitigation plan in place.
+
+Best regards,
+Eve
