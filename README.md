@@ -20,7 +20,7 @@ Built for teams that want to analyze email trails, trace escalation paths, and a
 
 | 📌 Email Indexing | 🤖 Query Assistant |
 |------------------|--------------------|
-| ![Index UI](screenshots/index.png) | ![Query UI](screenshots/query.png) |
+| ![Index UI](assets/ss1.png) | ![Query UI](assets/ss2.png) |
 
 ---
 
