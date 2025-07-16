@@ -6,15 +6,8 @@ from langchain.prompts import PromptTemplate
 import sys
 import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../../')))
-print("📂 Project root added to path:", os.path.abspath(os.path.join(os.path.dirname(__file__), '../../')))
-
 from helpers.query_by_thread import ask_email_agent3
 
-from helpers.credits import init_credits, show_credit_sidebar, use_credit
-
-
-init_credits()
-show_credit_sidebar()
 st.set_page_config(page_title="🤖 Query Assistant", layout="wide")
 
 
@@ -26,6 +19,19 @@ vectorstore = Chroma(persist_directory="chroma_email_db_3", embedding_function=e
 # Load all docs just for thread list (won't affect retrieval later)
 all_docs = vectorstore.similarity_search(" ", k=1000)
 all_threads = sorted(list(set(doc.metadata.get("thread", "Unknown") for doc in all_docs)))
+if not all_threads:
+    st.info("No mail threads indexed yet")
+    st.markdown(
+    """
+    <a href="/Index_new_threads" target="_self">
+        <button style='padding:10px 20px; background-color:#4CAF50; color:white; border:none; border-radius:8px; font-size:16px; cursor:pointer;'>
+            📂 Index New Mails
+        </button>
+    </a>
+    """,
+    unsafe_allow_html=True
+)
+    st.stop()
 
 st.subheader("📂 Query Scope")
 thread_options = ["All Threads"] + all_threads

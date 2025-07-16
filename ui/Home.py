@@ -1,11 +1,6 @@
 import streamlit as st
 
 import os
-from helpers.credits import init_credits, show_credit_sidebar, use_credit
-
-
-init_credits()
-show_credit_sidebar()
 st.write("Working directory:", os.getcwd())
 
 st.set_page_config(page_title="📬 Email RAG System", layout="wide")

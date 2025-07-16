@@ -5,14 +5,10 @@ import time
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_community.vectorstores import Chroma
 from langchain.schema import Document
-from helpers.credits import init_credits, show_credit_sidebar, use_credit
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../../')))
-print("📂 Project root added to path:", os.path.abspath(os.path.join(os.path.dirname(__file__), '../../')))
-
 from helpers.indexer_by_thread import index_email_uploaded
 
-init_credits()
-show_credit_sidebar()
+
 st.set_page_config(page_title="📥 Index New Emails", layout="wide")
 st.title("📥 Index New Email Text Files")
 
