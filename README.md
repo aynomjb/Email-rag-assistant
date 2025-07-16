@@ -101,17 +101,6 @@ Initial fix applied. Monitoring now.
 
 ---
 
-## 🔐 Credit System (Optional)
-
-Credits can be deducted on each query run. Easily customizable:
-```python
-session_state.credits -= 1
-if session_state.credits < 0:
-    st.warning("Out of credits")
-```
-
----
-
 ## 📚 Roadmap Ideas
 
 - [ ] Add RAG evaluation metrics (context relevance, F1, hallucination)
