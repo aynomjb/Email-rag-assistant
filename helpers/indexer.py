@@ -134,6 +134,7 @@ def index_email_directory(email_dir="emails"):
     txt_files = [f for f in txt_files if not f.endswith("-parsed.txt")]
     docs = [parse_email_r(fp) for fp in txt_files]
     vectorstore = get_vectorstore("chroma_email_db_3")
+    print(docs)
     vectorstore.add_documents(docs)
     vectorstore.persist()
     print(f"✅ Indexed {len(docs)} email(s) with trail into Chroma.")
