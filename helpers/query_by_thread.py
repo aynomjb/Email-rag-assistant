@@ -111,12 +111,12 @@ CONTEXT:
 
 
 def ask_email_agent3(query,email_dir, top_k=10):
+    search_kwargs={"k": top_k}
+    if email_dir and email_dir != "All Threads":
+        search_kwargs["filter"] = {"thread": email_dir}
     retriever = vectorstore.as_retriever(
         search_type="mmr",  # More diverse retrieval
-        search_kwargs={"k": top_k,
-        "filter": {"thread": email_dir}
-        }
-        
+        search_kwargs=search_kwargs
     )
     docs = retriever.get_relevant_documents(query)
 
