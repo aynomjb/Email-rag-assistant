@@ -29,17 +29,19 @@ Built for teams that want to analyze email trails, trace escalation paths, and a
 ```
 Mail-threaded/
 ├── ui/                      # Streamlit UI pages
-│   ├── home.py
+│   ├── Home.py
 │   ├── pages/
-│   │   ├── list.py
-│   │   ├── query.py
-│   │   └── index.py
+│   │   ├── 1_Query_assistant.py
+│   │   ├── 2_Indexed_threads.py
+│   │   └── 3_Index_new_threads.py
 ├── helpers/                 # Core functions for indexing, querying, parsing
 │   ├── query.py
 │   ├── index.py
-│   └── utils.py
+│   ├── test.py
+│   └── visualize.py
 ├── chroma_email_db_3/       # Chroma DB persistent directory
 ├── test_emails/             # Sample .txt email threads
+├── test_emails2/            # Sample .txt email threads
 ├── README.md
 ```
 
