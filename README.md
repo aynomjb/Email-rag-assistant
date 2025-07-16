@@ -35,9 +35,10 @@ Mail-threaded/
 │   │   ├── 2_Indexed_threads.py
 │   │   └── 3_Index_new_threads.py
 ├── helpers/                 # Core functions for indexing, querying, parsing
-│   ├── query.py
-│   ├── index.py
-│   ├── test.py
+│   ├── dummy.py
+│   ├── indexer_by_thread.py
+│   ├── query_by_thread.py
+│   ├── scoring.py
 │   └── visualize.py
 ├── chroma_email_db_3/       # Chroma DB persistent directory
 ├── test_emails/             # Sample .txt email threads
