@@ -8,7 +8,7 @@ import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../../')))
 print("📂 Project root added to path:", os.path.abspath(os.path.join(os.path.dirname(__file__), '../../')))
 
-from helpers.query import ask_email_agent3
+from helpers.query_by_thread import ask_email_agent3
 
 from helpers.credits import init_credits, show_credit_sidebar, use_credit
 
@@ -24,7 +24,7 @@ top_k = st.slider("Number of documents to retrieve:", 1, 20, 5)
 
 if st.button("Run Query") and query:
     with st.spinner("Processing..."):
-        response, docs = ask_email_agent3(query, top_k=top_k)
+        response, docs = ask_email_agent3(query, "emails4", top_k=top_k)
 
         st.subheader("🤖 Response")
         st.markdown(response)
