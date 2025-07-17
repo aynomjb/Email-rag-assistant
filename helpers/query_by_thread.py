@@ -6,6 +6,7 @@ from langchain.schema import Document
 import os
 import glob
 import datetime
+runpod_url = "https://cfcty7e5mg5veq-8000.proxy.runpod.net"
 
 # 1. Setup: Embedding + Chroma
 embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
@@ -51,7 +52,7 @@ CONTEXT:
 📝 Answer:"""
     )
 
-    llm = Ollama(model="llama3.2")  # Make sure ollama is running
+    llm = Ollama(model="llama3.2", base_url=runpod_url)  # Make sure ollama is running
 
     final_prompt = prompt.format(question=query, context=context)
     response = llm.invoke(final_prompt)
@@ -101,7 +102,7 @@ CONTEXT:
 📝 Answer:"""
     )
 
-    llm = Ollama(model="llama3.2")  # Ensure Ollama is running locally
+    llm = Ollama(model="llama3.2", base_url=runpod_url)  # Ensure Ollama is running locally
 
     final_prompt = prompt.format(question=query, context=context)
     response = llm.invoke(final_prompt)
@@ -150,8 +151,8 @@ CONTEXT:
 📝 Answer:"""
     )
 
-    llm = Ollama(model="llama3.2")  # Ensure Ollama is running locally
-
+    # llm = Ollama(model="llama3.2")  # Ensure Ollama is running locally
+    llm = Ollama(model="llama3.2", base_url=runpod_url)
     final_prompt = prompt.format(question=query, context=context)
     response = llm.invoke(final_prompt)
 
