@@ -8,6 +8,8 @@ import glob
 import datetime
 import hashlib
 import time
+from langchain_community.vectorstores.utils import filter_complex_metadata
+
 
 
 # 1. Setup: Embedding + Chroma
@@ -150,6 +152,7 @@ def generate_sha256_timestamp():
     return hashlib.sha256(timestamp).hexdigest()
 
 def parse_email_from_uploaded(file, email_dir="emails"):
+    print(file.name)
     file.seek(0)
     raw = file.read().decode("utf-8")
     lines = raw.splitlines()
@@ -173,6 +176,7 @@ def parse_email_from_uploaded(file, email_dir="emails"):
 
     return Document(
         page_content=reordered_body.strip(),
+        # metadata=filter_complex_metadata(doc.metadata)
         metadata={
             "from": headers.get("from"),
             "to": headers.get("to"),
@@ -183,12 +187,48 @@ def parse_email_from_uploaded(file, email_dir="emails"):
         }
     )
 
+def parse_email_from_uploaded2(file, email_dir="emails"):
+    print(file.name)
+    file.seek(0)
+    raw = file.read().decode("utf-8")
+    lines = raw.splitlines()
+    headers, body = {}, []
+    in_body = False
+    for line in lines:
+        if line.strip() == "":
+            in_body = True
+            continue
+        if not in_body:
+            if ":" in line:
+                key, val = line.split(":", 1)
+                headers[key.strip().lower()] = val.strip()
+        else:
+            body.append(line)
+
+    # Reverse trail logic: split by quote markers and reorder
+    body_text = "\n".join(body)
+    segments = body_text.split("\n---\n")
+    reordered_body = "\n---\n".join(reversed(segments))  # latest reply first
+
+    # Corrected metadata handling: Provide empty string defaults for missing headers
+    return Document(
+        page_content=reordered_body.strip(),
+        metadata={
+            "from": headers.get("from", ""),  # Provide default empty string
+            "to": headers.get("to", ""),      # Provide default empty string
+            "subject": headers.get("subject", ""), # Provide default empty string
+            "date": headers.get("date", ""),     # Provide default empty string
+            "source": os.path.basename(file.name),
+            "thread": email_dir
+        }
+    )
+
 
 # 3. Index all emails from a directory
 def index_email_uploaded(txt_files,email_dir):
     if not email_dir:
         email_dir = generate_sha256_timestamp()
-    docs = [parse_email_from_uploaded(fp, email_dir) for fp in txt_files]
+    docs = [parse_email_from_uploaded2(fp, email_dir) for fp in txt_files]
     vectorstore = get_vectorstore("chroma_email_db_3")
     vectorstore.add_documents(docs)
     vectorstore.persist()
