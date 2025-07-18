@@ -36,7 +36,8 @@ if uploaded_files:
         if not thread_name.strip():
             st.error("Please enter a thread name before indexing.")
         else:
-            index_email_uploaded(uploaded_files,thread_name)
-            # vectorstore.add_documents(documents)
-            # vectorstore.persist()
-            st.success(f"✅ Indexed {len(documents)} document(s) successfully!")
+            with st.spinner("Processing..."):
+                index_email_uploaded(uploaded_files,thread_name)
+                # vectorstore.add_documents(documents)
+                # vectorstore.persist()
+                st.success(f"✅ Indexed {len(documents)} document(s) successfully!")
